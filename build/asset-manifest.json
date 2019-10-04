@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "Nexysweb/tabular-excel/build/static/css/main.34de6062.chunk.css",
+    "main.js": "Nexysweb/tabular-excel/build/static/js/main.acb013c0.chunk.js",
+    "main.js.map": "Nexysweb/tabular-excel/build/static/js/main.acb013c0.chunk.js.map",
+    "runtime-main.js": "Nexysweb/tabular-excel/build/static/js/runtime-main.ac4f0ef4.js",
+    "runtime-main.js.map": "Nexysweb/tabular-excel/build/static/js/runtime-main.ac4f0ef4.js.map",
+    "static/js/2.12dcbf67.chunk.js": "Nexysweb/tabular-excel/build/static/js/2.12dcbf67.chunk.js",
+    "static/js/2.12dcbf67.chunk.js.map": "Nexysweb/tabular-excel/build/static/js/2.12dcbf67.chunk.js.map",
+    "index.html": "Nexysweb/tabular-excel/build/index.html",
+    "precache-manifest.9b17d281dbda9ce6a23d563d87fb83c3.js": "Nexysweb/tabular-excel/build/precache-manifest.9b17d281dbda9ce6a23d563d87fb83c3.js",
+    "service-worker.js": "Nexysweb/tabular-excel/build/service-worker.js",
+    "static/css/main.34de6062.chunk.css.map": "Nexysweb/tabular-excel/build/static/css/main.34de6062.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ac4f0ef4.js",
+    "static/js/2.12dcbf67.chunk.js",
+    "static/css/main.34de6062.chunk.css",
+    "static/js/main.acb013c0.chunk.js"
+  ]
+}
