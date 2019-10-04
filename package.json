@@ -8,9 +8,14 @@
     "react-dom": "^16.10.2",
     "react-scripts": "3.2.0"
   },
+  "main": "dist/tabular-xlsx.js",
+  "files": [
+    "dist/*"
+  ],
   "scripts": {
+    "buildpackage": "babel src/ --out-dir dist/",
     "start": "react-scripts start",
-    "build": "PUBLIC_URL=Nexysweb/tabular-excel/build react-scripts build",
+    "build": "PUBLIC_URL=/tabular-excel/build react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
