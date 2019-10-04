@@ -9,25 +9,10 @@ export const toXlsx = async (rows, worksheetName) => {
   const wb = new xl.Workbook();
   const ws = wb.addWorksheet(worksheetName);
 
-  /**
-   * helper function for defining style in xlsx (needs to be in function because of `wb`)
-   * @param color : string "red"
-   * @param bold : boolean
-   * @return objec with style
-   */
-  const style = (color, bold, size) => wb.createStyle({
-    font: {
-      color,
-      bold,
-      size
-    }
-  });
-
   // go through `rows`
   rows.map((row, i) => {
-    // go through `row`
+    // go through `columns`
     row.map((val, j) => {
-      let s = null;
       const cell = ws.cell(i+1, j+1);
 
       if (typeof val !== 'object') {
@@ -54,9 +39,9 @@ export const toXlsx = async (rows, worksheetName) => {
         cell.style(val.style)
       }
 
-      // link, todo
-      
+      return true;
     });
+    return true;
   });
 
   return await wb.writeToBuffer();
