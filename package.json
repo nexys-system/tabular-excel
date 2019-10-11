@@ -1,13 +1,9 @@
 {
-  "name": "tabular-export",
+  "name": "@nexys/tabular",
   "version": "0.1.0",
-  "private": true,
+  "license": "mit",
   "dependencies": {
-    "@nexys/reactutils": "^0.8.0",
-    "excel4node": "^1.7.2",
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2",
-    "react-scripts": "3.2.0"
+    "excel4node": "^1.7.2"
   },
   "main": "dist/tabular-xlsx.js",
   "files": [
@@ -37,6 +33,10 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.5.5",
-    "babel-plugin-module-resolver": "^3.2.0"
+    "babel-plugin-module-resolver": "^3.2.0",
+    "@nexys/reactutils": "^0.8.0",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-scripts": "3.2.0"
   }
 }
