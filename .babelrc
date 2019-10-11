@@ -1,33 +1,10 @@
 {
   presets: [
-    ['@babel/preset-env', {
-      modules: 'commonjs',
-      targets: {
-        node: 'current'
-      },
-      useBuiltIns: 'usage',
-      corejs: 3
-    }]
+    "@babel/preset-react",'@babel/preset-env'
   ],
   plugins: [
-    ['dynamic-import-node', { "noInterop": true }],
     '@babel/plugin-transform-arrow-functions',
-    [
-      "module-resolver",
-      {
-        cwd: "./",
-        root: [
-          "./src"
-        ],
-        alias: {
-          "#utils": "./src/utils",
-          "#lib": "./src/lib",
-          "#middleware": "./src/middleware",
-          "#services": "./src/services",
-          "#config": "./src/config"
-        }
-      }
-    ],
+
     ['@babel/plugin-proposal-class-properties',
       {
         loose: true
