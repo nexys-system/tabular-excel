@@ -1,7 +1,8 @@
 import React from 'react';
 
 
-import { toXlsx } from './tabular-xlsx'
+import { toXlsx } from './lib/tabular-xlsx'
+import * as Utils from './utils';
 
 // var text = 'Some data I want to export';
 //var data = new Blob([text], {type: 'text/plain'});
@@ -14,29 +15,8 @@ import { toXlsx } from './tabular-xlsx'
 //
 import users from './data/users.json';
 
-const colorByStatus = status => {
-  if (status === 'ok') return 'green';
-  if (status === 'inactive') return 'red';
-  if (status === 'pending') return 'orange';
 
-  return null
-}
-
-const randomInteger = () => Math.ceil(1000*Math.random());
-
-const bitToBlob = (x, type) => new Blob([x], {type});
-
-const formatJsArray = (js) => {
-  if (!Array.isArray(js) || js.length === 0) {
-    return [];
-  }
-
-  return '[\n\t' + js.map(row => {
-    return JSON.stringify(row)
-  }).reduce((a, b) => a + ',\n\t' + b) + '\n]';
-}
-
-export default class App extends React.Component {
+export default class TableGenerator extends React.Component {
   constructor(props) {
     super(props);
 
@@ -49,7 +29,7 @@ export default class App extends React.Component {
     const workbookName = 'Users'
 
     toXlsx(jsContent, workbookName).then(x => {
-      const b = bitToBlob(x, 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+      const b = Utils.bitToBlob(x, 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
       const url = window.URL.createObjectURL(b);
 
       window.location = url;
@@ -86,9 +66,9 @@ export default class App extends React.Component {
     const styleBoldAndBlue = {font: {color: 'blue', bold: true}};
 
     const jsContent = users.map(user => {
-      const style = {font: {color: colorByStatus(user.status)}};
+      const style = {font: {color: Utils.colorByStatus(user.status)}};
       const status = {content: user.status, style: style};
-      const age = {content: randomInteger(), style: styleBoldAndBlue};
+      const age = {content: Utils.randomInteger(), style: styleBoldAndBlue};
       return [user.firstName, user.lastName, status, age];
     });
 
@@ -116,7 +96,7 @@ export default class App extends React.Component {
     const { jsContent } = this.state;
 
     return (
-      <div className="container">
+      <React.Fragment>
         <h1>Tabular Export</h1>
         <p>
           Turn <code>JSON</code> lists into Excel files (.xlsx).
@@ -126,7 +106,7 @@ export default class App extends React.Component {
 
         <div className="row">
           <div className="col-md-12">
-            <textarea className="form-control" style={{minWidth: '100%', height: '400px'}} placeholder={'insert your json here'} value={formatJsArray(jsContent)} onChange={this.handleChange}/>
+            <textarea className="form-control" style={{minWidth: '100%', height: '400px'}} placeholder={'insert your json here'} value={Utils.formatJsArray(jsContent)} onChange={this.handleChange}/>
           </div>
         </div>
         <div className="row">
@@ -136,7 +116,7 @@ export default class App extends React.Component {
             </button>
           </div>
         </div> 
-      </div>
+      </React.Fragment>
     );
   }
 }
