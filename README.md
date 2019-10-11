@@ -1,5 +1,12 @@
 # Excel Tabular Generator
 
+![npm version](https://badge.fury.io/js/%40nexys%2Ftabular.svg)
+![npm version](https://img.shields.io/npm/v/@nexys/tabular.svg)
+
+[see website](https://nexysweb.github.io/tabular-excel) - click here if you are on the GH page
+
+[see it in action](/build)
+
 Turn `JSON` lists into Excel files (.xlsx).
 
 ## Resources
