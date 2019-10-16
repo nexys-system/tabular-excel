@@ -32,6 +32,12 @@ export default class TableGenerator extends React.Component {
       const b = Utils.bitToBlob(x, 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
       const url = window.URL.createObjectURL(b);
 
+      // change filename
+      // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Disposition
+      // Content-Disposition: inline
+      // Content-Disposition: attachment
+      // Content-Disposition: attachment; filename="filename.jpg"
+
       window.location = url;
     });
   }
