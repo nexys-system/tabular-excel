@@ -3,7 +3,7 @@ import React from 'react';
 import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import TableGenerator from './table-generator';
-import LinesToRows from './lines-rows'
+import LinesToRows from './lines-rows';
 
 import Layout from './layout';
 

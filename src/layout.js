@@ -11,17 +11,17 @@ const style = {
 export default (props) => {
   return (<React.Fragment>
     <header>
-      <div style={style} class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white">
-      <h5 class="my-0 mr-md-auto font-weight-normal"><Link to="/">Xlsx Tabular</Link></h5>
-      <nav class="my-2 my-md-0 mr-md-3">
-        <Link class="p-2 text-dark" to="/tables">Rows To Xlsx</Link>
-        <Link class="p-2 text-dark" to="/lines">Lines to rows</Link>
+      <div style={style} className="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white">
+      <h5 className="my-0 mr-md-auto font-weight-normal"><Link to="/">Xlsx Tabular</Link></h5>
+      <nav className="my-2 my-md-0 mr-md-3">
+        <Link className="p-2 text-dark" to="/tables">Rows To Xlsx</Link>
+        <Link className="p-2 text-dark" to="/lines">Lines to rows</Link>
       </nav>
     </div>
     </header>
 
     <main role="main">
-      <div className="container">
+      <div classNameName="container">
         {props.children}
       </div>
     </main>
