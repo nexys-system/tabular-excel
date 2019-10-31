@@ -20,11 +20,13 @@ export default class TableGenerator extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { jsContent: []};
+    this.state = { content: '', jsContent: []};
   }
 
   onClick = () => {
-    const { jsContent } = this.state;
+    const { content } = this.state;
+
+    const jsContent = JSON.parse(content);
 
     const workbookName = 'Users'
 
@@ -44,9 +46,9 @@ export default class TableGenerator extends React.Component {
 
   handleChange = (a) => {
     try {
-      const jsContent = JSON.parse(a.target.value);
+      const content = (a.target.value);
 
-      this.setState({jsContent});
+      this.setState({content});
     } catch (err) { }
   }
 
@@ -99,7 +101,7 @@ export default class TableGenerator extends React.Component {
   }
 
   render() {    
-    const { jsContent } = this.state;
+    const { content } = this.state;
 
     return (
       <React.Fragment>
@@ -112,7 +114,7 @@ export default class TableGenerator extends React.Component {
 
         <div className="row">
           <div className="col-md-12">
-            <textarea className="form-control" style={{minWidth: '100%', height: '400px'}} placeholder={'insert your json here'} value={Utils.formatJsArray(jsContent)} onChange={this.handleChange}/>
+            <textarea className="form-control" style={{minWidth: '100%', height: '400px'}} placeholder={'insert your json here'} value={content} onChange={this.handleChange}/>
           </div>
         </div>
         <div className="row">
