@@ -1,7 +1,7 @@
 # Excel Tabular Generator
 
 ![npm version](https://badge.fury.io/js/%40nexys%2Ftabular.svg)
-![npm version](https://img.shields.io/npm/v/@nexys/tabular.svg)[![CircleCI](https://circleci.com/gh/Nexysweb/tabular-exce.svg?style=svg)](https://circleci.com/gh/Nexysweb/tabular-exce)
+![npm version](https://img.shields.io/npm/v/@nexys/tabular.svg)[![CircleCI](https://circleci.com/gh/Nexysweb/tabular-excel.svg?style=svg)](https://circleci.com/gh/Nexysweb/tabular-excel)
 
 [see website](https://nexysweb.github.io/tabular-excel) - click here if you are on the GH page
 
