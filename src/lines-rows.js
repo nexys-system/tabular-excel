@@ -34,7 +34,8 @@ export default class LineToRows extends React.Component {
         const r = [];
 
         headers.map(h => {
-          r.push(row[h])
+          r.push(row[h]);
+          return true;
         });
 
         return r;

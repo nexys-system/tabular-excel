@@ -21,7 +21,7 @@ export default (props) => {
     </header>
 
     <main role="main">
-      <div classNameName="container">
+      <div className="container">
         {props.children}
       </div>
     </main>

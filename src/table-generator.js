@@ -13,8 +13,8 @@ import * as Utils from './utils';
 //const b = new Blob(['col1,col2,col3'], {type: 'text/csv'});
 //const b = new Blob(csv, {type: 'text/csv'});
 //
-import users from './data/users.json';
-
+import users from './examples/users.json';
+import multiPage from './examples/multi-page.json';
 
 export default class TableGenerator extends React.Component {
   constructor(props) {
@@ -53,6 +53,7 @@ export default class TableGenerator extends React.Component {
   }
 
   loadUsersSimple = () => {
+    console.log('load')
     const n = 10;
     const jsContent = users.splice(0, n).map(user => {
       return [user.firstName, user.lastName];
@@ -67,7 +68,7 @@ export default class TableGenerator extends React.Component {
 
     jsContent.unshift(headers);
 
-    this.setState({jsContent});
+    this.setState({content: JSON.stringify(jsContent,null,'  ')});
   }
 
   loadUsersAdvanced = () => {
@@ -80,13 +81,20 @@ export default class TableGenerator extends React.Component {
       return [user.firstName, user.lastName, status, age];
     });
 
-    this.setState({jsContent});
+    this.setState({content: JSON.stringify(jsContent,null,'  ')});
+  }
+
+  loadMultiPage = () => {
+    const jsContent = multiPage;
+
+    this.setState({content: JSON.stringify(jsContent,null,'  ')});
   }
 
   renderNav = () => {
     const navs = [
       {id:1, name: 'user simple', fx: this.loadUsersSimple},
-      {id:2, name: 'user advanced', fx: this.loadUsersAdvanced}
+      {id:2, name: 'user advanced', fx: this.loadUsersAdvanced},
+      {id:3, name: 'multi page', fx: this.loadMultiPage}
     ];
 
     const toLine = i => (<li key={i.id} className="nav-item">

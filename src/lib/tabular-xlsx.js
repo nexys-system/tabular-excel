@@ -1,12 +1,6 @@
 import xl from 'excel4node';
 
-/**
- * creates xlsx from rows
- * @param  rows : array of arrays. Note that if the cell can be formatted by passing an objet instead of a string, e.g. {content: 'content of the string', color: 'red', bold: true}
- * @param worksheetName : name of the worksheet
- */
-export const toXlsx = async (rows, worksheetName) => {
-  const wb = new xl.Workbook();
+const worksheet = (wb, rows, worksheetName) => {
   const ws = wb.addWorksheet(worksheetName);
 
   // go through `rows`
@@ -43,6 +37,30 @@ export const toXlsx = async (rows, worksheetName) => {
     });
     return true;
   });
+
+  return true;
+}
+
+/**
+ * creates xlsx from rows
+ * @param  rows : array of arrays. Note that if the cell can be formatted by passing an objet instead of a string, e.g. {content: 'content of the string', color: 'red', bold: true}
+ * @param worksheetName : name of the worksheet
+ */
+export const toXlsx = async (content, worksheetName) => {
+  const wb = new xl.Workbook();
+
+  if (typeof content === 'object' && !Array.isArray(content)) {
+    Object.keys(content).map(k => {
+      const rows = content[k];
+      console.log(rows)
+
+      worksheet(wb, rows, k);
+
+      return true;
+    });
+  } else {
+    worksheet(wb, content, worksheetName);
+  }
 
   return await wb.writeToBuffer();
 }
