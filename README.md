@@ -9,7 +9,17 @@
 
 Turn `JSON` lists into Excel files (.xlsx).
 
-## Lines to row
+## Multi pages
+
+if the input is an object: keys are worksheet names and values are the array needed to create the content of the worksheet
+
+## Styling cells
+
+Instead of having a string with the content of a cell, use `{content: 'cell content', style}`. `style` is an object containing the style of the cell.
+
+Documentation can be found here: [Style documentation of Excel 4 Nodes](https://www.npmjs.com/package/excel4node#styles)
+
+# Lines to row
 
 Sometimes structured data are newline delimited, see example below:
 ``` 
@@ -33,7 +43,6 @@ Lines to row then turns the above into
 ```
 
 ## Resources
-https://medium.com/@Nopziiemoo/create-excel-files-using-javascript-without-all-the-fuss-2c4aa5377813
+* https://medium.com/@Nopziiemoo/create-excel-files-using-javascript-without-all-the-fuss-2c4aa5377813
 https://shinglyu.com/web/2019/02/09/js_download_as_file.html
-https://www.npmjs.com/package/excel4node#styles
 https://www.name-generator.org.uk/quick/
