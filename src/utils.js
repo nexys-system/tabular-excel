@@ -6,6 +6,8 @@ export const colorByStatus = status => {
   return null
 }
 
+export const maleOrFemale = () => Math.round(Math.random());
+
 export const randomInteger = () => Math.ceil(1000*Math.random());
 
 export const bitToBlob = (x, type) => new Blob([x], {type});

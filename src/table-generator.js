@@ -78,7 +78,18 @@ export default class TableGenerator extends React.Component {
       const style = {font: {color: Utils.colorByStatus(user.status)}};
       const status = {content: user.status, style: style};
       const age = {content: Utils.randomInteger(), style: styleBoldAndBlue};
-      return [user.firstName, user.lastName, status, age];
+      const maleOrFemaleInt = Utils.maleOrFemale();
+      const maleOrFemaleText = maleOrFemaleInt === 1 ? 'Male' : 'Female';
+      const maleOrFemaleColor = maleOrFemaleInt === 1 ? 'blue' : 'pink';
+      const maleOrFemale = {
+        content: maleOrFemaleText,
+        style:{
+          fill:{ type: 'pattern', patternType: 'solid', fgColor: maleOrFemaleColor },
+          font: { color: 'white' }
+        }
+      };
+
+      return [user.firstName, user.lastName, status, age, maleOrFemale];
     });
 
     this.setState({content: JSON.stringify(jsContent,null,'  ')});
