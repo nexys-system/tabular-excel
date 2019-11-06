@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/tabular-excel/build/precache-manifest.9693329a17bb35aa97b1a8a95826022b.js"
+  "/tabular-excel/build/precache-manifest.b6072aeae174bba1102836888253d7c8.js"
 );
 
 self.addEventListener('message', (event) => {

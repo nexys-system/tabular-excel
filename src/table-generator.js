@@ -109,7 +109,7 @@ export default class TableGenerator extends React.Component {
       }
       ],
       [], // empty row here that will be filled with merged
-      [4, 5, 6],
+      [4, 5, 'https://google.com']
     ]
 
     this.setState({content: JSON.stringify(jsContent,null,'  ')});
@@ -120,7 +120,7 @@ export default class TableGenerator extends React.Component {
       {id:1, name: 'user simple', fx: this.loadUsersSimple},
       {id:2, name: 'user advanced', fx: this.loadUsersAdvanced},
       {id:3, name: 'multi page', fx: this.loadMultiPage},
-      {id:4, name: 'load merge', fx: this.loadMerge}
+      {id:4, name: 'merge', fx: this.loadMerge}
     ];
 
     const toLine = i => (<li key={i.id} className="nav-item">
