@@ -6,6 +6,7 @@ const getCell = (ws, i, j, merged = false) => {
     const mergeJ = j + 1 + Number(merged.h);
     return ws.cell(i+1, j+1, mergeI, mergeJ, true);
   }
+
   return ws.cell(i+1, j+1);
 }
 
@@ -17,9 +18,7 @@ export const getMerged = (val) => {
   return false;
 }
 
-export const isLink = l => {
-  return l.startsWith('http://') || l.startsWith('https://')
-}
+export const isLink = l => l.startsWith('http://') || l.startsWith('https://');
 
 // https://stackoverflow.com/questions/643782/how-to-check-whether-an-object-is-a-date
 export const isDate = d => d instanceof Date; //typeof d.getMilliseconds === 'function' && Object.prototype.toString.call(d) === '[object Date]';
