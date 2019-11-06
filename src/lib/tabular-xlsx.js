@@ -61,6 +61,7 @@ const worksheet = (wb, rows, worksheetName) => {
           break;
         case 'boolean':
           cell.bool(val.content);
+          break;
         default:
           cell.string('N/A')
           break;

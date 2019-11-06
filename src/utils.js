@@ -1,14 +1,4 @@
-export const colorByStatus = status => {
-  if (status === 'ok') return 'green';
-  if (status === 'inactive') return 'red';
-  if (status === 'pending') return 'orange';
-
-  return null
-}
-
-export const maleOrFemale = () => Math.round(Math.random());
-
-export const randomInteger = () => Math.ceil(1000*Math.random());
+import { toXlsx } from './lib/tabular-xlsx';
 
 export const bitToBlob = (x, type) => new Blob([x], {type});
 
@@ -20,4 +10,23 @@ export const formatJsArray = (js) => {
   return '[\n\t' + js.map(row => {
     return JSON.stringify(row)
   }).reduce((a, b) => a + ',\n\t' + b) + '\n]';
+}
+
+export const jsonBeautify = jsContent => JSON.stringify(jsContent,null,'  ');
+
+export const toExport = (content, workbookName = 'MyWorkBook') => {
+  const jsContent = JSON.parse(content);
+
+  toXlsx(jsContent, workbookName).then(x => {
+    const b = bitToBlob(x, 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+    const url = window.URL.createObjectURL(b);
+
+    // change filename
+    // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Disposition
+    // Content-Disposition: inline
+    // Content-Disposition: attachment
+    // Content-Disposition: attachment; filename="filename.jpg"
+
+    window.location = url;
+  });
 }
