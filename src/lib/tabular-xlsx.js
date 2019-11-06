@@ -9,13 +9,19 @@ const getCell = (ws, i, j, merged = false) => {
   return ws.cell(i+1, j+1);
 }
 
-const getMerged = (val) => {
+export const getMerged = (val) => {
   if (val.merged && val.merged.h && val.merged.v) {
     return val.merged;
   }
 
   return false;
 }
+
+export const isLink = l => {
+  return l.startsWith('http://') || l.startsWith('https://')
+}
+
+export const isObjectAndNotArray = c => typeof c === 'object' && !Array.isArray(c);
 
 const worksheet = (wb, rows, worksheetName) => {
   const ws = wb.addWorksheet(worksheetName);
@@ -38,7 +44,7 @@ const worksheet = (wb, rows, worksheetName) => {
           cell.number(val.content);
           break;
         case 'string':
-          if (val.content.startsWith('http://') || val.content.startsWith('https://')) {
+          if (isLink(val.content)) {
             cell.link(val);
           } else {
             cell.string(val.content);
@@ -69,10 +75,9 @@ const worksheet = (wb, rows, worksheetName) => {
 export const toXlsx = async (content, worksheetName) => {
   const wb = new xl.Workbook();
 
-  if (typeof content === 'object' && !Array.isArray(content)) {
+  if (isObjectAndNotArray(content)) {
     Object.keys(content).map(k => {
       const rows = content[k];
-      console.log(rows)
 
       worksheet(wb, rows, k);
 
