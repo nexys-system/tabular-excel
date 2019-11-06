@@ -18,4 +18,11 @@ test('isObjectAndNotArray', () => {
   const c2 = {};
   expect(T.isObjectAndNotArray(c1)).toEqual(false);
   expect(T.isObjectAndNotArray(c2)).toEqual(true);
-})
+});
+
+test('is date', () => {
+  expect(T.isDate(new Date())).toEqual(true);
+  // unfortunately that test case is uncovered
+  //expect(T.isDate(new Date('random'))).toEqual(false);
+  expect(T.isDate('random')).toEqual(false);
+});

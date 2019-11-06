@@ -21,6 +21,9 @@ export const isLink = l => {
   return l.startsWith('http://') || l.startsWith('https://')
 }
 
+// https://stackoverflow.com/questions/643782/how-to-check-whether-an-object-is-a-date
+export const isDate = d => d instanceof Date; //typeof d.getMilliseconds === 'function' && Object.prototype.toString.call(d) === '[object Date]';
+
 export const isObjectAndNotArray = c => typeof c === 'object' && !Array.isArray(c);
 
 const worksheet = (wb, rows, worksheetName) => {
@@ -50,6 +53,15 @@ const worksheet = (wb, rows, worksheetName) => {
             cell.string(val.content);
           }
           break;
+        case 'object':
+          if (isDate(val.content)) {
+            cell.date(val.content);
+          } else {
+            cell.string(val.content);
+          }
+          break;
+        case 'boolean':
+          cell.bool(val.content);
         default:
           cell.string('N/A')
           break;
