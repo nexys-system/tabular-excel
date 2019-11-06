@@ -2,8 +2,8 @@ import xl from 'excel4node';
 
 const getCell = (ws, i, j, merged = false) => {
   if (merged) {
-    const mergeI = i + 1 + Number(merged.v);
-    const mergeJ = j + 1 + Number(merged.h);
+    const mergeI = i + 1 + merged.v;
+    const mergeJ = j + 1 + merged.h;
     return ws.cell(i+1, j+1, mergeI, mergeJ, true);
   }
 
@@ -11,7 +11,7 @@ const getCell = (ws, i, j, merged = false) => {
 }
 
 export const getMerged = (val) => {
-  if (val.merged && val.merged.h && val.merged.v) {
+  if (val.merged && typeof val.merged.h === 'number' && typeof val.merged.v ==='number') {
     return val.merged;
   }
 

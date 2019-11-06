@@ -3,9 +3,11 @@ import * as T from './tabular-xlsx';
 test('get merged', () => {
   const v1 = {};
   const v2 = {merged: {h: 3, v: 7}};
+  const v3 = {merged: {h: 0, v: 7}};
 
   expect(T.getMerged(v1)).toEqual(false);
   expect(T.getMerged(v2)).toEqual({h: 3, v: 7});
+  expect(T.getMerged(v3)).toEqual({h: 0, v: 7});
 });
 
 test('is link', () => {
