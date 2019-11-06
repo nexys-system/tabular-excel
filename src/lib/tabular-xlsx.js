@@ -1,5 +1,22 @@
 import xl from 'excel4node';
 
+const getCell = (ws, i, j, merged = false) => {
+  if (merged) {
+    const mergeI = i + 1 + Number(merged.v);
+    const mergeJ = j + 1 + Number(merged.h);
+    return ws.cell(i+1, j+1, mergeI, mergeJ, true);
+  }
+  return ws.cell(i+1, j+1);
+}
+
+const getMerged = (val) => {
+  if (val.merged && val.merged.h && val.merged.v) {
+    return val.merged;
+  }
+
+  return false;
+}
+
 const worksheet = (wb, rows, worksheetName) => {
   const ws = wb.addWorksheet(worksheetName);
 
@@ -7,11 +24,14 @@ const worksheet = (wb, rows, worksheetName) => {
   rows.map((row, i) => {
     // go through `columns`
     row.map((val, j) => {
-      const cell = ws.cell(i+1, j+1);
-
       if (typeof val !== 'object') {
+        // reassign val
         val = {content: val};
       }
+
+      const merged = getMerged(val);
+
+      const cell = getCell(ws, i, j, merged);
 
       switch (typeof val.content) {
         case 'number':

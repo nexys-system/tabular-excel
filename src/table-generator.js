@@ -101,11 +101,26 @@ export default class TableGenerator extends React.Component {
     this.setState({content: JSON.stringify(jsContent,null,'  ')});
   }
 
+  loadMerge = () => {
+    const jsContent = [
+      [{
+        "content": "merged",
+        "merged": {"v": 1, "h": 2}
+      }
+      ],
+      [], // empty row here that will be filled with merged
+      [4, 5, 6],
+    ]
+
+    this.setState({content: JSON.stringify(jsContent,null,'  ')});
+  }
+
   renderNav = () => {
     const navs = [
       {id:1, name: 'user simple', fx: this.loadUsersSimple},
       {id:2, name: 'user advanced', fx: this.loadUsersAdvanced},
-      {id:3, name: 'multi page', fx: this.loadMultiPage}
+      {id:3, name: 'multi page', fx: this.loadMultiPage},
+      {id:4, name: 'load merge', fx: this.loadMerge}
     ];
 
     const toLine = i => (<li key={i.id} className="nav-item">
