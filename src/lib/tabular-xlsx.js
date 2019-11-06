@@ -47,7 +47,7 @@ const worksheet = (wb, rows, worksheetName) => {
           break;
         case 'string':
           if (isLink(val.content)) {
-            cell.link(val);
+            cell.link(val.content);
           } else {
             cell.string(val.content);
           }
