@@ -4,7 +4,7 @@
 [![npm version](https://img.shields.io/npm/v/@nexys/tabular.svg)](https://www.npmjs.com/package/@nexys/tabular)
 [![CircleCI](https://circleci.com/gh/Nexysweb/tabular-excel.svg?style=svg)](https://circleci.com/gh/Nexysweb/tabular-excel)
 
-* [see GH](https://nexysweb.github.io/tabular-excel)
+* [see GH](https://github.com/nexysweb/tabular-excel)
 * [see website](https://nexysweb.github.io/tabular-excel)
 
 [see it in action](./build)
