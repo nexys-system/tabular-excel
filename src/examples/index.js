@@ -78,6 +78,14 @@ export const merge = () => {
   ];
 }
 
+export const simpleCsv = () => {
+  return [
+    ['a', 1],
+    ['c', 'd'],
+    ['e', 'f']
+  ]
+}
+
 export const load = exampleId => {
   switch (exampleId) {
     case 1:
@@ -88,7 +96,10 @@ export const load = exampleId => {
       return multiPage();
     case 4:
       return merge();
+    case 5:
+     return simpleCsv();
     default:
       break;
   }
 }
+

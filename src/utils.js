@@ -1,4 +1,5 @@
 import { toXlsx } from './lib/tabular-xlsx';
+import * as Csv from './lib/csv';
 
 export const bitToBlob = (x, type) => new Blob([x], {type});
 
@@ -29,4 +30,20 @@ export const toExport = (content, workbookName = 'MyWorkBook') => {
 
     window.location = url;
   });
+}
+
+export const toCsv = (content) => {
+  const jsContent = JSON.parse(content);
+  const x = Csv.to(jsContent)
+    const b = bitToBlob(x, 'text/csv');
+    const url = window.URL.createObjectURL(b);
+
+    // change filename
+    // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Disposition
+    // Content-Disposition: inline
+    // Content-Disposition: attachment
+    // Content-Disposition: attachment; filename="filename.jpg"
+
+    window.location = url;
+  
 }

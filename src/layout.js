@@ -16,6 +16,7 @@ export default (props) => {
       <nav className="my-2 my-md-0 mr-md-3">
         <Link className="p-2 text-dark" to="/tables">Rows To Xlsx</Link>
         <Link className="p-2 text-dark" to="/lines">Lines to rows</Link>
+        <Link className="p-2 text-dark" to="/csv">CSV</Link>
       </nav>
     </div>
     </header>
