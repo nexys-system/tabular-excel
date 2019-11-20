@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/tabular-excel/build/static/css/main.34de6062.chunk.css",
-    "main.js": "/tabular-excel/build/static/js/main.72117606.chunk.js",
-    "main.js.map": "/tabular-excel/build/static/js/main.72117606.chunk.js.map",
+    "main.js": "/tabular-excel/build/static/js/main.3ec72e10.chunk.js",
+    "main.js.map": "/tabular-excel/build/static/js/main.3ec72e10.chunk.js.map",
     "runtime-main.js": "/tabular-excel/build/static/js/runtime-main.b0ab94a5.js",
     "runtime-main.js.map": "/tabular-excel/build/static/js/runtime-main.b0ab94a5.js.map",
-    "static/js/2.840e3511.chunk.js": "/tabular-excel/build/static/js/2.840e3511.chunk.js",
-    "static/js/2.840e3511.chunk.js.map": "/tabular-excel/build/static/js/2.840e3511.chunk.js.map",
+    "static/js/2.a4e9b4b3.chunk.js": "/tabular-excel/build/static/js/2.a4e9b4b3.chunk.js",
+    "static/js/2.a4e9b4b3.chunk.js.map": "/tabular-excel/build/static/js/2.a4e9b4b3.chunk.js.map",
     "index.html": "/tabular-excel/build/index.html",
-    "precache-manifest.e6f6ba6678f982b17f1f554d005b899b.js": "/tabular-excel/build/precache-manifest.e6f6ba6678f982b17f1f554d005b899b.js",
+    "precache-manifest.cc0af05371d55918028d032e4ae1de68.js": "/tabular-excel/build/precache-manifest.cc0af05371d55918028d032e4ae1de68.js",
     "service-worker.js": "/tabular-excel/build/service-worker.js",
     "static/css/main.34de6062.chunk.css.map": "/tabular-excel/build/static/css/main.34de6062.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.b0ab94a5.js",
-    "static/js/2.840e3511.chunk.js",
+    "static/js/2.a4e9b4b3.chunk.js",
     "static/css/main.34de6062.chunk.css",
-    "static/js/main.72117606.chunk.js"
+    "static/js/main.3ec72e10.chunk.js"
   ]
 }
