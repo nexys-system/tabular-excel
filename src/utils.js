@@ -32,18 +32,26 @@ export const toExport = (content, workbookName = 'MyWorkBook') => {
   });
 }
 
+export const toExportTxt = txt => {
+  const b = bitToBlob(txt, 'application/octet-stream');
+  const url = window.URL.createObjectURL(b);
+
+  new Promise(resolve => {
+    resolve(window.location = url)
+  })
+}
+
 export const toCsv = (content) => {
   const jsContent = JSON.parse(content);
   const x = Csv.to(jsContent)
-    const b = bitToBlob(x, 'text/csv');
-    const url = window.URL.createObjectURL(b);
+  const b = bitToBlob(x, 'text/csv');
+  const url = window.URL.createObjectURL(b);
 
-    // change filename
-    // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Disposition
-    // Content-Disposition: inline
-    // Content-Disposition: attachment
-    // Content-Disposition: attachment; filename="filename.jpg"
+  // change filename
+  // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Disposition
+  // Content-Disposition: inline
+  // Content-Disposition: attachment
+  // Content-Disposition: attachment; filename="filename.jpg"
 
-    window.location = url;
-  
+  window.location = url;
 }

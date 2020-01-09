@@ -17,6 +17,7 @@ export default (props) => {
         <Link className="p-2 text-dark" to="/tables">Rows To Xlsx</Link>
         <Link className="p-2 text-dark" to="/lines">Lines to rows</Link>
         <Link className="p-2 text-dark" to="/csv">CSV</Link>
+        <Link className="p-2 text-dark" to="/srtToVtt">SRT to VTT</Link>
       </nav>
     </div>
     </header>
