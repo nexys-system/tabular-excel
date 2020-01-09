@@ -44,8 +44,8 @@ export const jsonUnitToVtt = j => {
   return [
     '',
     j.timestamp,
-    '',
-    '',
+    ' ',
+    ' ',
     j.content.join('\n')
   ].join('\n');
 }

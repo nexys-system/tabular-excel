@@ -57,8 +57,8 @@ test('jsonUnitToVtt', () => {
 
   const e = `
 00:00:10,800 --> 00:00:13,160
-
-
+ 
+ 
 TSS ACADEMY
 Introduction`;
   const r = SrtToVtt.jsonUnitToVtt(j)
@@ -66,7 +66,7 @@ Introduction`;
   expect(r).toEqual(e);
 })
 
-test('jsonUnitToVtt', () => {
+test('jsonToVtt', () => {
   const j = [{
     timestamp: '00:00:10,800 --> 00:00:13,160',
     content: ['TSS ACADEMY', 'Introduction'],
@@ -76,8 +76,8 @@ test('jsonUnitToVtt', () => {
   const e = `WEBVTT
 
 00:00:10,800 --> 00:00:13,160
-
-
+ 
+ 
 TSS ACADEMY
 Introduction`;
   const r = SrtToVtt.jsonToVtt(j)
@@ -85,7 +85,7 @@ Introduction`;
   expect(r).toEqual(e);
 });
 
-/*
+
 test('direct from file', () => {
   const srtContent = fs.readFileSync('/Users/johanboissard/Downloads/1000_10 Academy Welcome 200106.srt', 'utf-8');
   const vttContent = fs.readFileSync('/Users/johanboissard/Downloads/1000_10 Academy Welcome 200106.vtt', 'utf-8');
@@ -97,4 +97,4 @@ test('direct from file', () => {
   const v2 = r.split('\n').pop(); //.slice(0, 100);
 
   expect(v1).toEqual(v2);
-})*/
+})
