@@ -85,6 +85,7 @@ Introduction`;
   expect(r).toEqual(e);
 });
 
+/*
 test('direct from file', () => {
   const srtContent = fs.readFileSync('/Users/johanboissard/Downloads/1000_10 Academy Welcome 200106.srt', 'utf-8');
   const vttContent = fs.readFileSync('/Users/johanboissard/Downloads/1000_10 Academy Welcome 200106.vtt', 'utf-8');
@@ -96,4 +97,4 @@ test('direct from file', () => {
   const v2 = r.split('\n').pop(); //.slice(0, 100);
 
   expect(v1).toEqual(v2);
-})
+})*/
