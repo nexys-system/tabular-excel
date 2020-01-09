@@ -3,11 +3,11 @@
 [![npm version](https://badge.fury.io/js/%40nexys%2Ftabular.svg)](https://www.npmjs.com/package/@nexys/tabular)
 [![npm version](https://img.shields.io/npm/v/@nexys/tabular.svg)](https://www.npmjs.com/package/@nexys/tabular)
 [![CircleCI](https://circleci.com/gh/Nexysweb/tabular-excel.svg?style=svg)](https://circleci.com/gh/Nexysweb/tabular-excel)
+[![TavisCI](https://travis-ci.com/Nexysweb/tabular-excel.svg?branch=master)](https://travis-ci.com/Nexysweb/tabular-excel)
+
 
 * [see GH](https://github.com/nexysweb/tabular-excel)
 * [see website](https://nexysweb.github.io/tabular-excel)
-
-[see it in action](./build)
 
 Turn `JSON` lists into Excel files (.xlsx).
 
