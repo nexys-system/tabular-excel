@@ -1,22 +1,13 @@
 import React from 'react';
 
-import * as Utils from './utils';
-import * as SrtToVtt from './lib/srt-vtt';
+import * as Utils from '../utils';
+import * as SrtToVtt from '../lib/srt-vtt';
 
 export default () => {
   const [ data, setData ] = React.useState(null);
   const onChange = event => {
-
     const file = event.target.files[0];
-
-    const fileReader = new FileReader();
-    fileReader.onloadend = a => {
-      const data = fileReader.result;
-      setData(data);
-    };
-    
-    // this function calls `onloadend`
-    fileReader.readAsText(file);
+    Utils.readFile(file).then(setData);
   }
   
   const handleClick = a => {

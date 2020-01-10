@@ -6,7 +6,7 @@ import * as History from 'history';
 import TableGenerator from './table-generator';
 import LinesToRows from './lines-rows';
 import Csv from './csv';
-import SrtToVtt from './srt-vtt';
+import SrtToVtt from './srt-vtt/index';
 
 
 import Layout from './layout';

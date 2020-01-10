@@ -55,3 +55,23 @@ export const toCsv = (content) => {
 
   window.location = url;
 }
+
+/**
+ * read file asynchronously
+ * @param {*} file 
+ * some references regrding files upload in HTML
+ * @see https://stackoverflow.com/questions/24843508/filereader-error-the-object-is-already-busy-reading-blobs
+ * @see https://stackoverflow.com/questions/25333488/why-isnt-the-filelist-object-an-array
+ * @see https://stackoverflow.com/questions/1593225/how-to-select-multiple-files-with-input-type-file
+ */
+export const readFile = file => {
+  return new Promise(resolve => {
+    const fileReader = new FileReader();
+    fileReader.onloadend = a => {
+      const data = fileReader.result;
+      resolve(data);
+    };
+
+    fileReader.readAsText(file);
+  });
+}
