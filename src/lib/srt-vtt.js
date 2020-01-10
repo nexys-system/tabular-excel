@@ -59,5 +59,3 @@ export const jsonToVtt = j => {
 
   return s.trim();
 }
-
-

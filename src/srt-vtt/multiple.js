@@ -5,14 +5,16 @@ import * as SrtToVtt from '../lib/srt-vtt';
 
 import JSZip from 'jszip';
 
+export const nameToVtt = f => f.replace(/\.[^.]+$/, '.vtt');
+
 const zipFolderFromContentArray = cArray => {
   const zip = new JSZip();
   // create a file and a folder
 
   cArray.map(c => {
-    const { name, content } = c;
+    const { filename, content } = c;
 
-    zip.file(name, content);
+    zip.file(filename, content);
 
     zip.generateAsync({type:"blob"})
     .then(function(content) {
@@ -35,7 +37,9 @@ export default () => {
       const j = SrtToVtt.srtToJson(data.split('\r\n'));
       const content = SrtToVtt.jsonToVtt(j);
 
-      return {name: file.name, content};
+      const filename = nameToVtt(file.name);
+
+      return {filename, content};
     }));
 
     zipFolderFromContentArray(r)
