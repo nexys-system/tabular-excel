@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.js": "/tabular-excel/static/js/main.c4df796f.chunk.js",
-    "main.js.map": "/tabular-excel/static/js/main.c4df796f.chunk.js.map",
+    "main.js": "/tabular-excel/static/js/main.2379c2c1.chunk.js",
+    "main.js.map": "/tabular-excel/static/js/main.2379c2c1.chunk.js.map",
     "runtime-main.js": "/tabular-excel/static/js/runtime-main.a36ff53b.js",
     "runtime-main.js.map": "/tabular-excel/static/js/runtime-main.a36ff53b.js.map",
-    "static/js/2.b9a750b8.chunk.js": "/tabular-excel/static/js/2.b9a750b8.chunk.js",
-    "static/js/2.b9a750b8.chunk.js.map": "/tabular-excel/static/js/2.b9a750b8.chunk.js.map",
+    "static/js/2.90aa9922.chunk.js": "/tabular-excel/static/js/2.90aa9922.chunk.js",
+    "static/js/2.90aa9922.chunk.js.map": "/tabular-excel/static/js/2.90aa9922.chunk.js.map",
     "index.html": "/tabular-excel/index.html",
-    "precache-manifest.78fffd523f2dcb6c5cbee67b78f4c76e.js": "/tabular-excel/precache-manifest.78fffd523f2dcb6c5cbee67b78f4c76e.js",
+    "precache-manifest.25cb02d98bf558a7cf8e4b634a006db7.js": "/tabular-excel/precache-manifest.25cb02d98bf558a7cf8e4b634a006db7.js",
     "service-worker.js": "/tabular-excel/service-worker.js"
   },
   "entrypoints": [
     "static/js/runtime-main.a36ff53b.js",
-    "static/js/2.b9a750b8.chunk.js",
-    "static/js/main.c4df796f.chunk.js"
+    "static/js/2.90aa9922.chunk.js",
+    "static/js/main.2379c2c1.chunk.js"
   ]
 }
