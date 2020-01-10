@@ -44,6 +44,10 @@ Lines to row then turns the above into
 ]
 ```
 
+# SRT to VTT
+
+Easily convert SRT files to VTT
+
 ## Resources
 * https://medium.com/@Nopziiemoo/create-excel-files-using-javascript-without-all-the-fuss-2c4aa5377813
 https://shinglyu.com/web/2019/02/09/js_download_as_file.html
