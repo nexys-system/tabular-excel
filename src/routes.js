@@ -11,9 +11,11 @@ import SrtToVtt from './srt-vtt/index';
 
 import Layout from './layout';
 
-const Default = () => {
-  return (<p>Select an option from the menu above</p>);
-}
+const Default = () => (<div>
+  <p>Select an option from the menu above</p>
+
+  <p><a href="https://github.com/Nexysweb/tabular-excel"><i className="fa fa-code"></i> Source</a> available under MIT license.</p>
+</div>);
 
 const history = History.createBrowserHistory({
   basename: process.env.PUBLIC_URL || '',
