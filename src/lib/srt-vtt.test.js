@@ -56,11 +56,9 @@ test('jsonUnitToVtt', () => {
   };
 
   const e = `
-00:00:10,800 --> 00:00:13,160
- 
- 
-TSS ACADEMY
-Introduction`;
+00:00:10,800 --> 00:00:13,160 line:-1
+ TSS ACADEMY
+ Introduction`;
   const r = SrtToVtt.jsonUnitToVtt(j)
 
   expect(r).toEqual(e);
@@ -75,11 +73,9 @@ test('jsonToVtt', () => {
 
   const e = `WEBVTT
 
-00:00:10,800 --> 00:00:13,160
- 
- 
-TSS ACADEMY
-Introduction`;
+00:00:10,800 --> 00:00:13,160 line:-1
+ TSS ACADEMY
+ Introduction`;
   const r = SrtToVtt.jsonToVtt(j)
 
   expect(r).toEqual(e);

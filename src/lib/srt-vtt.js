@@ -43,10 +43,8 @@ export const srtToJson = (lines) => {
 export const jsonUnitToVtt = j => {
   return [
     '',
-    j.timestamp,
-    ' ',
-    ' ',
-    j.content.join('\n')
+    j.timestamp + ' line:-1',
+    j.content.map(x => ' ' + x).join('\n')
   ].join('\n');
 }
 

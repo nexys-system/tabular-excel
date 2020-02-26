@@ -21,6 +21,8 @@ const zipFolderFromContentArray = cArray => {
         const url = window.URL.createObjectURL(content);
         window.location = url;
     });
+
+    return true;
   })
 }
 
