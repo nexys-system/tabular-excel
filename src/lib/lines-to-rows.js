@@ -27,6 +27,4 @@ export const lineToRows = (lines, mappingAttributes, seqNLines) => {
   });
 
   return rows;
-}
-
-
+};
