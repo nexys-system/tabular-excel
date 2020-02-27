@@ -81,7 +81,7 @@ test('jsonToVtt', () => {
 
   expect(r).toEqual(e);
 });
-
+// some random comment
 /*
 test('direct from file', () => {
   const srtContent = fs.readFileSync('/Users/johanboissard/Downloads/1000_10 Academy Welcome 200106.srt', 'utf-8');
