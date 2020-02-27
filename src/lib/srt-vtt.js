@@ -44,7 +44,7 @@ export const jsonUnitToVtt = j => {
   return [
     '',
     j.timestamp + ' line:-1',
-    j.content.map(x => ' ' + x).join('\n')
+    j.content.map(x => ' ' + x + ' ').join('\n')
   ].join('\n');
 }
 
@@ -55,5 +55,5 @@ export const jsonToVtt = j => {
   
   const s = a.join('\n');
 
-  return s.trim();
+  return s//.trim();
 }
