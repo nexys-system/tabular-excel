@@ -1,20 +1,17 @@
 {
   "name": "@nexys/tabular",
   "version": "1.3.1",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
-    "@babel/runtime": "^7.5.5",
-    "@nexys/reactutils": "^1.5.10",
+    "@nexys/utils": "^3.9.13",
     "excel4node": "^1.7.2",
-    "jszip": "^3.2.2",
-    "react-router-dom": "^5.1.2"
+    "jszip": "^3.2.2"
   },
   "main": "dist/index.js",
   "files": [
     "dist/*"
   ],
   "scripts": {
-    "lint": "eslint src/",
     "buildpackage": "babel src/lib --out-dir dist/; rm dist/**.test.js",
     "start": "react-scripts start",
     "build": "PUBLIC_URL=/tabular-excel react-scripts build;rm -rf docs;mv build docs;cp docs/index.html docs/404.html",
@@ -37,9 +34,12 @@
     ]
   },
   "devDependencies": {
-    "@nexys/babelsetup": "^0.0.6",
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2",
-    "react-scripts": "3.2.0"
+    "@types/react-dom": "^17.0.0",
+    "@types/react-router-dom": "^5.1.7",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.4.3",
+    "typescript": "^3.9.3"
   }
 }
