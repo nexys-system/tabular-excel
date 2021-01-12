@@ -10,6 +10,8 @@ import SrtToVtt from "./srt-vtt/index";
 
 import Layout from "./layout";
 
+const sha = process.env.REACT_APP_GIT_SHA || "git_sha_undefined";
+
 const Default = () => (
   <div>
     <p>Select an option from the menu above</p>
@@ -19,6 +21,14 @@ const Default = () => (
         <i className="fa fa-code"></i> Source
       </a>{" "}
       available under MIT license.
+    </p>
+
+    <p>
+      <small>
+        <a href={"https://github.com/Nexysweb/tabular-excel/commit/" + sha}>
+          {sha}
+        </a>
+      </small>
     </p>
   </div>
 );
