@@ -98,7 +98,7 @@ const worksheet = (wb: any, rows: Val[][], worksheetName: string) => {
  * @param  rows : array of arrays. Note that if the cell can be formatted by passing an objet instead of a string, e.g. {content: 'content of the string', color: 'red', bold: true}
  * @param worksheetName : name of the worksheet
  */
-export const toXlsx = async (content: any, worksheetName: string) => {
+export const toXlsx = async (content: any, worksheetName: string = 'Sheet1') => {
   const wb = new xl.Workbook();
 
   if (isObjectAndNotArray(content)) {
