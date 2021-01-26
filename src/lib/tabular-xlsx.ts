@@ -36,10 +36,13 @@ export const isLink = (l: string): boolean =>
 // https://stackoverflow.com/questions/643782/how-to-check-whether-an-object-is-a-date
 export const isDate = (d: any): boolean => d instanceof Date; //typeof d.getMilliseconds === 'function' && Object.prototype.toString.call(d) === '[object Date]';
 
-export const isObjectAndNotArray = (c: any): boolean =>
-  typeof c === "object" && !Array.isArray(c);
+export const isObjectAndNotArray = (
+  c: Val[][] | { [key: string]: Val[][] }
+): c is Val[][] => {
+  return !(typeof c === "object" && !Array.isArray(c));
+};
 
-const worksheet = (wb: any, rows: Val[][], worksheetName: string) => {
+const worksheet = (wb: Ws, rows: Val[][], worksheetName: string) => {
   const ws = wb.addWorksheet(worksheetName);
 
   // go through `rows`
@@ -98,17 +101,14 @@ const worksheet = (wb: any, rows: Val[][], worksheetName: string) => {
  * @param  rows : array of arrays. Note that if the cell can be formatted by passing an objet instead of a string, e.g. {content: 'content of the string', color: 'red', bold: true}
  * @param worksheetName : name of the worksheet
  */
-export const toXlsx = async (content: any, worksheetName: string = 'Sheet1') => {
-  const wb = new xl.Workbook();
+export const toXlsx = async (
+  content: Val[][] | { [key: string]: Val[][] },
+  worksheetName: string = "Sheet1"
+) => {
+  const wb: Ws = new xl.Workbook();
 
-  if (isObjectAndNotArray(content)) {
-    Object.keys(content).map((k) => {
-      const rows = content[k];
-
-      worksheet(wb, rows, k);
-
-      return true;
-    });
+  if (!isObjectAndNotArray(content)) {
+    Object.entries(content).forEach(([k, rows]) => worksheet(wb, rows, k));
   } else {
     worksheet(wb, content, worksheetName);
   }

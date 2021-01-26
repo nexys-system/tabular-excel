@@ -2,13 +2,14 @@ import React from "react";
 
 import { lineToRows } from "./lib/lines-to-rows";
 import { toXlsx } from "./lib/tabular-xlsx";
-import * as Utils from "./utils";
 
 import Select from "./components/select";
 import Input from "./components/input";
 import Textarea from "./components/textarea";
 
 import NUtils from "@nexys/utils";
+
+import { serveFile } from "./lib/utils";
 
 export default class LineToRows extends React.Component<{}, any> {
   constructor(props: any) {
@@ -52,13 +53,11 @@ export default class LineToRows extends React.Component<{}, any> {
       const workbookName = "Users";
 
       toXlsx(r, workbookName).then((x) => {
-        const b = Utils.bitToBlob(
+        serveFile(
           x,
-          "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+          "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "linerow.xlsx"
         );
-        const url = window.URL.createObjectURL(b);
-
-        window.location.href = url;
       });
     }
   };
