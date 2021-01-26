@@ -1,6 +1,6 @@
 {
   "name": "@nexys/tabular",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "license": "MIT",
   "dependencies": {
     "excel4node": "^1.7.2"
