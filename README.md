@@ -10,7 +10,7 @@
 - [see GH](https://github.com/nexysweb/tabular-excel)
 - [see website](https://nexysweb.github.io/tabular-excel)
 
-Turn `JSON` lists into Excel files (.xlsx).
+Turn `JSON` lists into Excel files (.xlsx)
 
 ## Multi pages
 
