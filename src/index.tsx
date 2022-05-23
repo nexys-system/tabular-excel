@@ -1,11 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Routes from './routes';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import Routes from "./routes";
 
-ReactDOM.render(<Routes />, document.getElementById('root'));
+import { Buffer } from "buffer";
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+(globalThis as any).Buffer = Buffer;
+
+ReactDOM.createRoot(document.getElementById("root")!).render(<Routes />);

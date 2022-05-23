@@ -1,4 +1,5 @@
 import * as T from "./tabular-xlsx";
+import { test, expect } from "vitest";
 
 test("get merged", () => {
   const v1 = {};
@@ -16,7 +17,7 @@ test("is link", () => {
 });
 
 test("isObjectAndNotArray", () => {
-  const c1 = [];
+  const c1: any[] = [];
   const c2 = {};
   expect(!T.isObjectAndNotArray(c1)).toEqual(false);
   expect(!T.isObjectAndNotArray(c2)).toEqual(true);
