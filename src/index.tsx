@@ -2,8 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import Routes from "./routes";
 
-import { Buffer } from "buffer";
+import { Buffer as BufferPolyfill } from "buffer";
+declare var Buffer: typeof BufferPolyfill;
+(globalThis as any).Buffer = BufferPolyfill;
 
-(globalThis as any).Buffer = Buffer;
+console.log("buffer", Buffer.from("foo", "hex"));
 
 ReactDOM.createRoot(document.getElementById("root")!).render(<Routes />);
