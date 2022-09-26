@@ -12,7 +12,6 @@ const baseConfig: UserConfigExport = {
   },
   optimizeDeps: {
     esbuildOptions: {
-      target: "es2020",
       // Node.js global to browser globalThis
       define: {
         global: "globalThis",
