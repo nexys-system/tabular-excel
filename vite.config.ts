@@ -1,14 +1,24 @@
 import { defineConfig, UserConfigExport } from "vitest/config";
 import react from "@vitejs/plugin-react";
 import { NodeGlobalsPolyfillPlugin } from "@esbuild-plugins/node-globals-polyfill";
+import rollupNodePolyFill from "rollup-plugin-node-polyfills";
+import { NodeModulesPolyfillPlugin } from "@esbuild-plugins/node-modules-polyfill";
 
 const baseConfig: UserConfigExport = {
   plugins: [react()],
   test: {
     // ...
   },
+
   build: {
     target: ["es2020"],
+    rollupOptions: {
+      plugins: [
+        // Enable rollup polyfills plugin
+        // used during production bundling
+        (rollupNodePolyFill as any)(),
+      ],
+    },
   },
   optimizeDeps: {
     esbuildOptions: {
@@ -19,8 +29,10 @@ const baseConfig: UserConfigExport = {
       // Enable esbuild polyfill plugins
       plugins: [
         NodeGlobalsPolyfillPlugin({
+          process: true,
           buffer: true,
         }),
+        NodeModulesPolyfillPlugin(),
       ],
     },
   },
