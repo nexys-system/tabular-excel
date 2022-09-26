@@ -1,6 +1,6 @@
 {
   "name": "@nexys/tabular",
-  "version": "1.4.6",
+  "version": "1.5.0",
   "license": "MIT",
   "dependencies": {
     "excel4node": "^1.7.2"
@@ -11,10 +11,9 @@
   ],
   "scripts": {
     "buildpackage": "tsc -p tsconfig.build.json",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "vite",
+    "build": "tsc && vite build",
+    "test": "vitest"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -32,14 +31,18 @@
     ]
   },
   "devDependencies": {
+    "@esbuild-plugins/node-globals-polyfill": "^0.1.1",
     "@nexys/utils": "^3.9.13",
-    "@types/react-dom": "^17.0.0",
-    "@types/react-router-dom": "^5.1.7",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@types/react-router-dom": "^5.3.3",
+    "@vitejs/plugin-react": "^2.0.1",
     "jszip": "^3.2.2",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.3",
-    "typescript": "^3.9.3"
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.3.0",
+    "typescript": "^4.6.3",
+    "vite": "^3.0.7",
+    "vitest": "^0.21.1"
   }
 }

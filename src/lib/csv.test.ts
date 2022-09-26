@@ -1,10 +1,11 @@
-import * as Csv from './csv';
+import * as Csv from "./csv";
+import { test, expect } from "vitest";
 
-test('csv', () => {
+test("csv", () => {
   const rows = [
-    ['a', 'b'],
-    ['c', 'd'],
-    ['e', 'f']
+    ["a", "b"],
+    ["c", "d"],
+    ["e", "f"],
   ];
 
   const r = Csv.to(rows);
@@ -16,11 +17,11 @@ test('csv', () => {
   expect(r).toEqual(e);
 });
 
-test('csv with number', () => {
+test("csv with number", () => {
   const rows = [
-    ['a', 1],
-    ['c', 'd'],
-    ['e', 'f']
+    ["a", 1],
+    ["c", "d"],
+    ["e", "f"],
   ];
 
   const r = Csv.to(rows);
@@ -32,14 +33,14 @@ test('csv with number', () => {
   expect(r).toEqual(e);
 });
 
-test('csv with number and delimited with tabs', () => {
+test("csv with number and delimited with tabs", () => {
   const rows = [
-    ['a', 1],
-    ['c', 'd'],
-    ['e', 'f']
+    ["a", 1],
+    ["c", "d"],
+    ["e", "f"],
   ];
 
-  const r = Csv.to(rows, '\t');
+  const r = Csv.to(rows, "\t");
 
   const e = `"a"\t1
 "c"\t"d"
