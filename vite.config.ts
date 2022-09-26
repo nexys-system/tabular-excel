@@ -28,8 +28,6 @@ const baseConfig: UserConfigExport = {
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
-  console.log(baseConfig);
-
   // if  `mode===ghpages`: we add the path prefix to match the path prefix of gh pages
   if (mode === "ghpages") {
     return { ...baseConfig, base: "/tabular-excel/" };
