@@ -7,7 +7,7 @@ import LinesToRows from "./lines-rows";
 import Csv from "./csv";
 
 import Layout from "./layout";
-import { basename, sha, github } from "config";
+import { basename, sha, github } from "./config";
 
 const Default = () => (
   <div>
