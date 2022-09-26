@@ -16,9 +16,13 @@ const baseConfig: UserConfigExport = {
       plugins: [
         // Enable rollup polyfills plugin
         // used during production bundling
+        // @ts-ignore
         (rollupNodePolyFill as any)(),
       ],
     },
+  },
+  resolve: {
+    alias: { buffer: "rollup-plugin-node-polyfills/polyfills/buffer-es6" },
   },
   optimizeDeps: {
     esbuildOptions: {
