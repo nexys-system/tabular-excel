@@ -1,6 +1,6 @@
 {
   "name": "@nexys/tabular",
-  "version": "1.5.3",
+  "version": "1.5.6",
   "license": "MIT",
   "dependencies": {
     "excel4node": "^1.7.2"
@@ -32,6 +32,7 @@
   },
   "devDependencies": {
     "@esbuild-plugins/node-globals-polyfill": "^0.1.1",
+    "@esbuild-plugins/node-modules-polyfill": "^0.1.4",
     "@nexys/utils": "^3.9.13",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
